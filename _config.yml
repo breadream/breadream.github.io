@@ -1,8 +1,9 @@
-url : "https://breadream.github.io"
+remote_theme: jekyll/minima
+url : "https://breadream.github.io/"
 baseurl : ""
 title: Random notes  
 author: Brad Lim
-email: 브레드.디에이치.림@gmail.com 
+email: b.d.l@gmail.com 
 description: > # this means to ignore newlines until "show_excerpts:"
     Literally, some random notes regarding dev stuff.
 
@@ -50,5 +51,3 @@ theme: minima
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
-
-remote_theme: jekyll/minima
