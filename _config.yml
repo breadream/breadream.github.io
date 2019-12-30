@@ -1,3 +1,6 @@
+remote_theme : jekyll/minima 
+url                      : "https://breadream.github.io"
+baseurl                  : ""
 title: Random notes 
 author: GitHub User
 email: b.d.l@domain.com
