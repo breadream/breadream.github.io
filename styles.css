@@ -64,7 +64,7 @@ body {
 
 .brand {
   font-family: "Fraunces", serif;
-  font-size: 1.4rem;
+  font-size: 1.75rem;
   color: var(--ink);
   text-decoration: none;
 }
@@ -111,9 +111,13 @@ main {
   padding: clamp(3rem, 8vw, 6rem) 0;
 }
 
+#contact {
+  scroll-margin-top: 6rem;
+}
+
 .hero h1 {
   font-family: "Fraunces", serif;
-  font-size: clamp(1.8rem, 4.2vw, 3.6rem);
+  font-size: clamp(1.7rem, 4vw, 3.3rem);
   line-height: 1.1;
   max-width: 16ch;
   margin: 0.4rem 0 1rem;
@@ -121,7 +125,7 @@ main {
 
 .eyebrow {
   letter-spacing: 0.09em;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   color: var(--accent);
   font-weight: 700;
@@ -228,9 +232,10 @@ h2 {
 .skill-tags span {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.85);
-  padding: 0.45rem 0.75rem;
+  padding: 0.32rem 0.58rem;
   border-radius: 999px;
   font-weight: 500;
+  font-size: 0.85rem;
 }
 
 .section-heading {
@@ -353,7 +358,7 @@ h2 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.1rem;
 }
 
 .contact-links a {
@@ -365,22 +370,30 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.3rem;
-  height: 2.3rem;
-  border: 1px solid var(--line);
+  width: 2.7rem;
+  height: 2.7rem;
+  border: 1px solid rgba(10, 125, 103, 0.24);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.85);
-  transition: transform 0.15s ease, border-color 0.15s ease;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(248, 244, 238, 0.92));
+  box-shadow:
+    0 5px 14px rgba(24, 39, 56, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
 
 .icon-link:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.03);
   border-color: var(--accent);
+  box-shadow:
+    0 10px 20px rgba(24, 39, 56, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  color: var(--accent);
 }
 
 .icon-link svg {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
   fill: currentColor;
 }
 
