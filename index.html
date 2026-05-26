@@ -101,10 +101,24 @@
 
     <section id="projects" class="section reveal">
       <div class="section-heading">
-        <h2>Selected Projects</h2>
-        <a href="https://github.com/breadream" target="_blank" rel="noopener noreferrer">See all on GitHub</a>
+        <div>
+          <h2>Selected Projects</h2>
+          <a href="https://github.com/breadream" target="_blank" rel="noopener noreferrer">See all on GitHub</a>
+        </div>
+        <div class="project-controls" aria-label="Project carousel controls">
+          <button class="project-control" type="button" data-project-direction="-1" aria-label="Previous project">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M15.7 5.3a1 1 0 0 1 0 1.4L10.4 12l5.3 5.3a1 1 0 1 1-1.4 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.4 0z"/>
+            </svg>
+          </button>
+          <button class="project-control" type="button" data-project-direction="1" aria-label="Next project">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M8.3 18.7a1 1 0 0 1 0-1.4l5.3-5.3-5.3-5.3a1 1 0 0 1 1.4-1.4l6 6a1 1 0 0 1 0 1.4l-6 6a1 1 0 0 1-1.4 0z"/>
+            </svg>
+          </button>
+        </div>
       </div>
-      <div class="cards">
+      <div class="cards project-carousel" aria-label="Selected projects">
         <article class="card">
           <p class="card-tag">Geo-Analytics Platform</p>
           <h3><a href="https://eventmap.site" target="_blank" rel="noopener noreferrer">Event Map</a></h3>
@@ -115,6 +129,19 @@
           </ul>
           <div class="card-links">
             <a href="https://github.com/breadream/eventmap.site" target="_blank" rel="noopener noreferrer">Code</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="card-tag">Code Intelligence</p>
+          <h3><a href="https://github.com/breadream/code-graph" target="_blank" rel="noopener noreferrer">Code Graph</a></h3>
+          <p>Codebase AI assistant using RAG for fast vector search and trusted, file-cited engineering answers.</p>
+          <ul>
+            <li>RAG workflows, vector search, codebase context retrieval</li>
+            <li>Built for fast answers grounded in cited source files</li>
+          </ul>
+          <div class="card-links">
+            <a href="https://github.com/breadream/code-graph" target="_blank" rel="noopener noreferrer">Code</a>
           </div>
         </article>
 

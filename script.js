@@ -4,6 +4,8 @@ const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
 const revealElements = document.querySelectorAll('.reveal');
 const sections = document.querySelectorAll('main section[id]');
 const emailLink = document.querySelector('#email-link');
+const projectCarousel = document.querySelector('.project-carousel');
+const projectControls = document.querySelectorAll('[data-project-direction]');
 
 if (menuToggle && nav) {
   menuToggle.addEventListener('click', () => {
@@ -15,6 +17,33 @@ if (emailLink) {
   emailLink.addEventListener('click', (event) => {
     event.preventDefault();
     window.location.href = 'mailto:brad.dh.lim@gmail.com';
+  });
+}
+
+if (projectCarousel && projectControls.length) {
+  const getProjectStep = () => {
+    const card = projectCarousel.querySelector('.card');
+    const gap = Number.parseFloat(window.getComputedStyle(projectCarousel).columnGap) || 0;
+    return card ? card.getBoundingClientRect().width + gap : projectCarousel.clientWidth;
+  };
+
+  projectControls.forEach((control) => {
+    control.addEventListener('click', () => {
+      const direction = Number(control.dataset.projectDirection);
+      const maxScroll = projectCarousel.scrollWidth - projectCarousel.clientWidth;
+
+      if (direction > 0 && projectCarousel.scrollLeft >= maxScroll - 2) {
+        projectCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+        return;
+      }
+
+      if (direction < 0 && projectCarousel.scrollLeft <= 2) {
+        projectCarousel.scrollTo({ left: maxScroll, behavior: 'smooth' });
+        return;
+      }
+
+      projectCarousel.scrollBy({ left: getProjectStep() * direction, behavior: 'smooth' });
+    });
   });
 }
 

@@ -241,7 +241,7 @@ h2 {
 .section-heading {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: end;
   gap: 1rem;
 }
 
@@ -249,19 +249,68 @@ h2 {
   color: var(--accent-strong);
 }
 
+.project-controls {
+  display: flex;
+  gap: 0.55rem;
+  flex: 0 0 auto;
+}
+
+.project-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border: 1px solid rgba(10, 125, 103, 0.28);
+  border-radius: 999px;
+  color: var(--accent-strong);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.project-control:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.project-control:focus-visible {
+  outline: 3px solid rgba(10, 125, 103, 0.24);
+  outline-offset: 3px;
+}
+
+.project-control svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
 .cards {
   margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
   gap: 1rem;
+  overflow-x: auto;
+  padding: 0 0.1rem 1rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.cards::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
+  flex: 0 0 calc((100% - 2rem) / 3);
+  min-width: 0;
   padding: 1rem;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 1rem;
   box-shadow: var(--shadow);
+  scroll-snap-align: start;
 }
 
 .card h3 {
@@ -416,8 +465,8 @@ h2 {
 }
 
 @media (max-width: 900px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
+  .card {
+    flex-basis: calc((100% - 1rem) / 2);
   }
 }
 
@@ -445,9 +494,17 @@ h2 {
     display: flex;
   }
 
-  .quick-stats,
-  .cards {
+  .quick-stats {
     grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .card {
+    flex-basis: min(86vw, 24rem);
   }
 
   .skills-grid {
